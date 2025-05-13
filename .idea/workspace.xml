@@ -5,7 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="f799e59d-fd76-4b32-a15d-bba236e73bdf" name="Changes" comment="Testes">
-      <change beforePath="$PROJECT_DIR$/exercicios/teste001.py" beforeDir="false" afterPath="$PROJECT_DIR$/exercicios/teste001.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/exercicios/teste002.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,6 +40,9 @@
   "associatedIndex": 7
 }]]></component>
   <component name="ProjectId" id="2x2DABO2vzg3snF5QNbinZEXDc6" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -74,7 +78,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1747127128659</updated>
-      <workItem from="1747127129766" duration="1180000" />
+      <workItem from="1747127129766" duration="1845000" />
     </task>
     <task id="LOCAL-00001" summary="Teste">
       <option name="closed" value="true" />
@@ -116,7 +120,15 @@
       <option name="project" value="LOCAL" />
       <updated>1747127967815</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="Testes">
+      <option name="closed" value="true" />
+      <created>1747128431868</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1747128431868</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,5 +138,8 @@
     <MESSAGE value="Teste" />
     <MESSAGE value="Testes" />
     <option name="LAST_COMMIT_MESSAGE" value="Testes" />
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Estudos_Python$teste001.coverage" NAME="teste001 Coverage Results" MODIFIED="1747128565984" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/exercicios" />
   </component>
 </project>
