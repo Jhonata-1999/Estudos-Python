@@ -276,10 +276,31 @@ def adicionar():
                 botao_salvar.destroy()
 
             botao_salvar = Button(frame_tabela, command=update, anchor='center', text="Salvar atualização".upper(), overrelief = 'ridge', font = ('Ivy 7 bold'), bg = cor3, fg = cor1)
-            botao_salvar.place(x=180, y=160)
+            botao_salvar.place(x=230, y=0)
 
         except IndexError:
             messagebox.showerror('Erro', 'Selecionar um dos cursos na tabela')
+
+        #funçao deletar curso
+    def delete_curso():
+        try:
+            tree_itens = tree_curso.focus()
+            tree_dicionario = tree_curso.item(tree_itens)
+            tree_lista = tree_dicionario['values']
+
+            valor_id = tree_lista[0]
+
+            #deletar dados do bd
+            deletar_curso([valor_id])
+
+            #mostrando mensagem de sucesso
+            messagebox.showinfo('Sucesso', 'Os dados foram removidos com sucesso.')
+
+            mostrar_cursos()
+
+        except IndexError:
+            messagebox.showerror('Erro', 'Selecionar um dos cursos na tabela')
+
 
     I_nome = Label(frame_detalhes, text="Nome do Curso", height = 1, anchor = NW, font = ('Ivy 10'), bg=cor1, fg=cor4)
     I_nome.place(x=4, y=10)
@@ -297,13 +318,13 @@ def adicionar():
     e_preco.place(x=7, y=160)
 
     botao_carregar = Button(frame_detalhes, command=novo_curso,  anchor=CENTER, text="Salvar".upper(),  width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor7, fg=cor1)
-    botao_carregar.place(x=100, y=160)
+    botao_carregar.place(x=107, y=160)
 
-    botao_atualizar = Button(frame_detalhes, command = update_curso, text="Atualizar".upper(), anchor=CENTER, width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor10, fg=cor1)
-    botao_atualizar.place(x=180, y=160)
+    botao_atualizar = Button(frame_detalhes, command = update_curso, anchor=CENTER, text="Atualizar".upper(), width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor10, fg=cor1)
+    botao_atualizar.place(x=187, y=160)
 
-    botao_deletar = Button(frame_detalhes, text="Deletar".upper(), anchor=CENTER, width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor6, fg=cor1)
-    botao_deletar.place(x=260, y=160)
+    botao_deletar = Button(frame_detalhes, command = delete_curso, anchor=CENTER, text="Deletar".upper(), width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor6, fg=cor1)
+    botao_deletar.place(x=267, y=160)
 
     def mostrar_cursos():
         app_nome = Label(frame_tabela_curso, text = "Tabela de Cursos", height = 1, pady = 0, padx = 0, relief = "flat", anchor = NW, font = ('Ivy 10 bold'), bg = cor1, fg = cor4)
