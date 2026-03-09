@@ -378,6 +378,33 @@ def adicionar():
     I_linha.place(x = 5, y = 50)
 
     #detalhes da turma
+    # funçao nova turma
+    def nova_turma():
+        nome = e_nome_turma.get()
+        curso = c_curso.get()
+        data = data_inicio.get()
+
+        lista = (str(nome), str(curso), str(data))
+
+
+        # verificando se os valores estao vazios
+        for i in lista:
+            if i == "":
+                messagebox.showerror("Erro", "Preencha todos os campos.")
+                return
+
+        # inserindo os dados
+        criar_turmas(lista)
+
+        # mostrando mensagem de sucesso
+        messagebox.showinfo('Sucesso', 'Os dados foram inseridos com sucesso.')
+
+        e_nome_turma.delete(0, END)
+        c_curso.delete(0, END)
+        data_inicio.delete(0, END)
+
+        mostrar_turmas()
+
     I_nome = Label(frame_detalhes, text = "Nome da Turma", height = 1, anchor = NW, font = ('Ivy 10'), bg = cor1, fg = cor4)
     I_nome.place(x = 404, y = 10)
     e_nome_turma = Entry(frame_detalhes, width = 35, justify = 'left', relief = 'solid')
@@ -387,14 +414,14 @@ def adicionar():
     I_turma.place(x = 404, y = 70)
 
     #pegando os cursos
-    cursos = ['curso 1', 'curso 2']
+    cursos = ver_cursos()
     curso = []
 
     for i in cursos:
-        curso.append(i)
+        curso.append(i[1])
 
     c_curso = ttk.Combobox(frame_detalhes, width = 20, font = ('Ivy 8 bold'))
-    c_curso['values'] = (curso)
+    c_curso['values'] = curso
     c_curso.place(x = 407, y = 100)
 
     I_data_inicio = Label(frame_detalhes, text='Data de Início',height = 1, anchor = NW, font = ('Ivy 10'), bg = cor1, fg = cor4)
@@ -402,7 +429,7 @@ def adicionar():
     data_inicio = DateEntry(frame_detalhes, width = 10, background = 'darkblue', foreground = 'white', borderwidth = 2, year=2025)
     data_inicio.place(x = 407, y = 160)
 
-    botao_carregar = Button(frame_detalhes, text="Salvar".upper(), anchor=CENTER, width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor7, fg=cor1)
+    botao_carregar = Button(frame_detalhes, command = nova_turma, text="Salvar".upper(), anchor=CENTER, width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor7, fg=cor1)
     botao_carregar.place(x=507, y=160)
 
     botao_atualizar = Button(frame_detalhes, text="Atualizar".upper(), anchor=CENTER, width = 10, overrelief = RIDGE, font = ('Ivy 7 bold'), bg=cor10, fg=cor1)

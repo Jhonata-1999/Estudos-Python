@@ -54,7 +54,7 @@ try:
                 data_nascimento DATE,
                 cpf TEXT,
                 turma_nome TEXT,
-                FOREIGN KEY (turma_nome) REFERENCES cursos (nome) ON UPDATE CASCADE ON DELETE CASCADE
+                FOREIGN KEY (turma_nome) REFERENCES turma (nome) ON UPDATE CASCADE ON DELETE CASCADE
         )""")
 
         print('Tabela alunos criada com sucesso.')
